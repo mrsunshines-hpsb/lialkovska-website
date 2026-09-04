@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carolina — young pianist. Demo portfolio website with placeholder content." />
+  <title>Carolina — Pianist</title>
+
+  <!-- Fonts: Cormorant Garamond (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" data-i18n="brand">Carolina</a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#achievements" data-i18n="nav.achievements">Achievements</a></li>
+        <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="#videos" data-i18n="nav.videos">Videos</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <!-- Language switcher -->
+      <div class="lang-switch" role="group" aria-label="Language / Мова">
+        <button class="lang-btn" id="langEn" aria-pressed="true">EN</button>
+        <button class="lang-btn" id="langUa" aria-pressed="false">UA</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <!-- Decorative soft background blobs -->
+      <div class="hero-blobs" aria-hidden="true">
+        <span class="blob blob-blush"></span>
+        <span class="blob blob-lavender"></span>
+        <span class="blob blob-champagne"></span>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-text reveal">
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Pianist &bull; Performer &bull; Competition Participant</p>
+          <h1 class="hero-name" data-i18n="hero.name">Carolina</h1>
+          <p class="hero-intro" data-i18n="hero.intro">
+            Placeholder introduction text. A short, warm paragraph about Carolina's
+            journey in music will live here.
+          </p>
+          <a class="btn btn-primary" href="#achievements" data-i18n="hero.cta">View achievements</a>
+        </div>
+
+        <!-- Photo placeholder for Carolina's future portrait -->
+        <div class="hero-photo reveal" role="img" aria-label="Photo placeholder: Carolina's future portrait" data-i18n-aria="hero.photoAlt">
+          <div class="photo-placeholder">
+            <!-- Decorative piano keys -->
+            <svg class="photo-svg" viewBox="0 0 120 60" aria-hidden="true" focusable="false">
+              <g fill="#fff" stroke="#c9b8a6" stroke-width="1">
+                <rect x="2" y="2" width="14" height="56" rx="2"/>
+                <rect x="18" y="2" width="14" height="56" rx="2"/>
+                <rect x="34" y="2" width="14" height="56" rx="2"/>
+                <rect x="50" y="2" width="14" height="56" rx="2"/>
+                <rect x="66" y="2" width="14" height="56" rx="2"/>
+                <rect x="82" y="2" width="14" height="56" rx="2"/>
+                <rect x="98" y="2" width="20" height="56" rx="2"/>
+              </g>
+              <g fill="#6b5a4f">
+                <rect x="14" y="2" width="7" height="34" rx="1.5"/>
+                <rect x="33" y="2" width="7" height="34" rx="1.5"/>
+                <rect x="60" y="2" width="7" height="34" rx="1.5"/>
+                <rect x="79" y="2" width="7" height="34" rx="1.5"/>
+                <rect x="94" y="2" width="7" height="34" rx="1.5"/>
+              </g>
+            </svg>
+            <span class="photo-label" data-i18n="hero.photoLabel">Photo placeholder — future portrait</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="about.title">About me</h2>
+          <span class="section-line" aria-hidden="true"></span>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <span class="demo-chip" data-i18n="chip.demo">Demo content</span>
+            <p data-i18n="about.bio1">
+              This is placeholder biography text. Replace it with Carolina's real story —
+              how she began playing the piano, her teachers, her favourite repertoire and
+              what performing means to her.
+            </p>
+            <p data-i18n="about.bio2">
+              A second placeholder paragraph can describe her musical personality,
+              practice routine and dreams for the stage.
+            </p>
+
+            <div class="stats" role="list">
+              <div class="stat" role="listitem">
+                <span class="stat-value">8</span>
+                <span class="stat-label" data-i18n="about.statYears">Years of music</span>
+              </div>
+              <div class="stat" role="listitem">
+                <span class="stat-value">25</span>
+                <span class="stat-label" data-i18n="about.statPerformances">Performances</span>
+              </div>
+              <div class="stat" role="listitem">
+                <span class="stat-value">10</span>
+                <span class="stat-label" data-i18n="about.statCompetitions">Competitions</span>
+              </div>
+            </div>
+            <p class="demo-note" data-i18n="about.statsNote">Demo data — numbers shown are placeholders.</p>
+          </div>
+
+          <div class="about-photo reveal" role="img" aria-label="Photo placeholder: Carolina during a lesson or performance" data-i18n-aria="about.photoAlt">
+            <div class="photo-placeholder photo-placeholder-square">
+              <svg class="photo-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="#c9b8a6" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+              </svg>
+              <span class="photo-label" data-i18n="about.photoLabel">Photo placeholder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section section-tinted" id="achievements">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="ach.title">Achievements</h2>
+          <span class="section-line" aria-hidden="true"></span>
+          <p class="section-sub" data-i18n="ach.sub">Example awards below — real competition results will replace them.</p>
+        </div>
+
+        <!-- Cards are rendered from the ACHIEVEMENTS data array in script.js.
+             To add a new achievement, append one object there. -->
+        <div class="cards-grid" id="achievementsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="gal.title">Gallery</h2>
+          <span class="section-line" aria-hidden="true"></span>
+          <p class="section-sub" data-i18n="gal.sub">Placeholder photos — real images can be added later. Click a tile to preview.</p>
+        </div>
+
+        <!-- Tiles rendered from the GALLERY data array in script.js -->
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEOS ============ -->
+    <section class="section section-tinted" id="videos">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="vid.title">Videos</h2>
+          <span class="section-line" aria-hidden="true"></span>
+          <p class="section-sub" data-i18n="vid.sub">Video embeds (e.g. YouTube) will appear here later — placeholders for now.</p>
+        </div>
+
+        <!-- Cards rendered from the VIDEOS data array in script.js -->
+        <div class="videos-grid" id="videosGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container contact-inner">
+        <div class="section-head reveal">
+          <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+          <span class="section-line" aria-hidden="true"></span>
+          <p class="section-sub" data-i18n="contact.sub">Placeholder links — real profiles will be connected later.</p>
+        </div>
+
+        <div class="social-grid reveal">
+          <a class="social-card" href="#" aria-label="Instagram (placeholder link)">
+            <span class="social-name">Instagram</span>
+            <span class="social-handle">@carolina.piano</span>
+          </a>
+          <a class="social-card" href="#" aria-label="YouTube (placeholder link)">
+            <span class="social-name">YouTube</span>
+            <span class="social-handle">Carolina Piano</span>
+          </a>
+          <a class="social-card" href="#" aria-label="TikTok (placeholder link)">
+            <span class="social-name">TikTok</span>
+            <span class="social-handle">@carolina.piano</span>
+          </a>
+          <a class="social-card" href="#" aria-label="Email (placeholder address)">
+            <span class="social-name" data-i18n="contact.email">Email</span>
+            <span class="social-handle">hello@example.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-name" data-i18n="brand">Carolina</span>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> <span data-i18n="brand">Carolina</span>.
+        <span data-i18n="footer.rights">All rights reserved.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview" data-i18n-aria="lightbox.close">&times;</button>
+    <figure class="lightbox-figure">
+      <div class="lightbox-media" id="lightboxMedia"></div>
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+</body>
+</html>

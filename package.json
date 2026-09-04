@@ -1,0 +1,12 @@
+{
+  "name": "caroline-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio website for a young pianist — vanilla HTML/CSS/JS, no build step.",
+  "scripts": {
+    "dev": "http-server -p 5173 -o"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
