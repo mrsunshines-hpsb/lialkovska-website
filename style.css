@@ -364,6 +364,9 @@ a { color: var(--rose-deep); text-decoration: none; }
   margin-bottom: 0.6rem;
 }
 .ach-location { font-size: 0.88rem; color: var(--text-soft); }
+.ach-note { font-size: 0.82rem; color: var(--text-soft); margin-top: 0.35rem; }
+/* Softer badge for participation (no ranking implied) */
+.ach-award--soft { background: var(--blush-soft); color: var(--text-soft); }
 
 /* ---------- Gallery ---------- */
 .gallery-grid {

@@ -37,7 +37,35 @@ const TRANSLATIONS = {
     "about.photoAlt": "Photo placeholder: Carolina during a lesson or performance",
     "about.photoLabel": "Photo placeholder",
     "ach.title": "Achievements",
-    "ach.sub": "Example awards below — real competition results will replace them.",
+    "ach.sub": "Competition results and festival participations.",
+    "ach.1.name": "International Online Piano Competition (USA)",
+    "ach.1.date": "February 2023",
+    "ach.1.award": "Grand Prix",
+    "ach.1.loc": "USA, online",
+    "ach.2.name": "Warsaw Selection Round of the 17th All-Ukrainian Festival of Modern Song and Popular Music “Chervona Ruta”",
+    "ach.2.date": "26 October 2024",
+    "ach.2.award": "Official reserve of the festival",
+    "ach.2.loc": "Warsaw, Poland",
+    "ach.2.note": "Category: popular music",
+    "ach.3.name": "Lang Lang International Music Foundation — “The Season of Excellence Celebration”",
+    "ach.3.date": "—",
+    "ach.3.award": "2nd Prize",
+    "ach.3.loc": "Steinway Hall, London, United Kingdom",
+    "ach.3.note": "Senior Division",
+    "ach.4.name": "«Paris: Talents d'Europe»",
+    "ach.4.date": "—",
+    "ach.4.award": "Participation",
+    "ach.4.loc": "France",
+    "ach.4.note": "10th season of the European talent competition",
+    "ach.5.name": "Internal Academic Piano Competitions",
+    "ach.5.date": "—",
+    "ach.5.award": "2nd place",
+    "ach.5.loc": "Music academy (internal competition)",
+    "ach.6.name": "«PIANO ART VICTORY»",
+    "ach.6.date": "—",
+    "ach.6.award": "—",
+    "ach.6.loc": "Online",
+    "ach.6.note": "Result not yet available",
     "gal.title": "Gallery",
     "gal.sub": "Placeholder photos — real images can be added later. Click a tile to preview.",
     "vid.title": "Videos",
@@ -79,7 +107,35 @@ const TRANSLATIONS = {
     "about.photoAlt": "Заповнювач фото: Кароліна під час заняття чи виступу",
     "about.photoLabel": "Заповнювач фото",
     "ach.title": "Досягнення",
-    "ach.sub": "Нижче наведені приклади нагород — пізніше їх замінять реальні результати конкурсів.",
+    "ach.sub": "Результати конкурсів та участь у фестивалях.",
+    "ach.1.name": "Міжнародний онлайн-конкурс піаністів (США)",
+    "ach.1.date": "Лютий 2023",
+    "ach.1.award": "Grand Prix",
+    "ach.1.loc": "США, онлайн",
+    "ach.2.name": "Варшавський відбірковий конкурс XVII Всеукраїнського фестивалю сучасної пісні та популярної музики «Червона Рута»",
+    "ach.2.date": "26 жовтня 2024",
+    "ach.2.award": "Офіційний резерв фестивалю",
+    "ach.2.loc": "Варшава, Польща",
+    "ach.2.note": "Категорія: популярна музика",
+    "ach.3.name": "Lang Lang International Music Foundation — «The Season of Excellence Celebration»",
+    "ach.3.date": "—",
+    "ach.3.award": "Друга премія",
+    "ach.3.loc": "Steinway Hall, Лондон, Велика Британія",
+    "ach.3.note": "Старша вікова категорія",
+    "ach.4.name": "«Paris: Talents d'Europe»",
+    "ach.4.date": "—",
+    "ach.4.award": "Участь",
+    "ach.4.loc": "Франція",
+    "ach.4.note": "10-й сезон європейського конкурсу талантів",
+    "ach.5.name": "Внутрішні академічні фортепіанні конкурси",
+    "ach.5.date": "—",
+    "ach.5.award": "2-ге місце",
+    "ach.5.loc": "Музична академія (внутрішній конкурс)",
+    "ach.6.name": "«PIANO ART VICTORY»",
+    "ach.6.date": "—",
+    "ach.6.award": "—",
+    "ach.6.loc": "Онлайн",
+    "ach.6.note": "Результат поки невідомий",
     "gal.title": "Галерея",
     "gal.sub": "Заповнювачі фото — реальні зображення можна додати пізніше. Натисніть на плитку для перегляду.",
     "vid.title": "Відео",
@@ -99,14 +155,15 @@ const TRANSLATIONS = {
    Data arrays — to add content later, append objects here.
    -------------------------------------------------------------------------- */
 
-/* placeholder: demo achievements; replace with real competition results */
+/* Real achievements. Each item pulls its text from ach.<id>.* translation
+   keys — to add one, append an object here and add matching keys. */
 const ACHIEVEMENTS = [
-  { year: "2025", name: "Demo — International Piano Competition", award: "1st place", location: "Demo City, Country" },
-  { year: "2024", name: "Demo — Young Pianists Festival", award: "Grand Prix", location: "Demo City, Country" },
-  { year: "2024", name: "Demo — National Music Contest", award: "2nd place", location: "Demo City, Country" },
-  { year: "2023", name: "Demo — Regional Piano Olympiad", award: "Laureate", location: "Demo City, Country" },
-  { year: "2023", name: "Demo — Spring Piano Showcase", award: "3rd place", location: "Demo City, Country" },
-  { year: "2022", name: "Demo — Charity Gala Concert", award: "Special diploma", location: "Demo City, Country" },
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4, participation: true }, // "Участь" — not an award/ranking
+  { id: 5 },
+  { id: 6 },
 ];
 
 /* placeholder: demo gallery; point "img" at real files in assets/ later */
@@ -175,15 +232,19 @@ function setLang(lang) {
 function renderAchievements() {
   const grid = document.getElementById("achievementsGrid");
   if (!grid) return;
-  grid.innerHTML = ACHIEVEMENTS.map(
-    (a) => `
+  grid.innerHTML = ACHIEVEMENTS.map((a) => {
+    const k = `ach.${a.id}.`;
+    const noteKey = `${k}note`;
+    const note = noteKey in TRANSLATIONS.en ? t(noteKey) : ""; // optional per item
+    return `
     <article class="ach-card">
-      <span class="ach-year">${a.year}</span>
-      <h3 class="ach-name">${a.name}</h3>
-      <span class="ach-award">${a.award}</span>
-      <p class="ach-location">${a.location}</p>
-    </article>`
-  ).join("");
+      <span class="ach-year">${t(`${k}date`)}</span>
+      <h3 class="ach-name">${t(`${k}name`)}</h3>
+      <span class="ach-award${a.participation ? " ach-award--soft" : ""}">${t(`${k}award`)}</span>
+      <p class="ach-location">${t(`${k}loc`)}</p>
+      ${note ? `<p class="ach-note">${note}</p>` : ""}
+    </article>`;
+  }).join("");
 }
 
 function renderGallery() {
